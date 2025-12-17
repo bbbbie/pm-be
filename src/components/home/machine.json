@@ -1,11 +1,11 @@
 {
-  "collectionName": "components_home_home_stories",
+  "collectionName": "components_home_machines",
   "info": {
-    "displayName": "Home Story"
+    "displayName": "Machine"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     },
     "image": {
@@ -17,13 +17,6 @@
         "videos",
         "audios"
       ]
-    },
-    "description": {
-      "type": "customField",
-      "customField": "plugin::ckeditor5.CKEditor",
-      "options": {
-        "preset": "defaultHtml"
-      }
     }
   },
   "config": {}

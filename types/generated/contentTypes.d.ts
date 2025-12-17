@@ -609,8 +609,11 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     home_banner: Schema.Attribute.Component<'home.home-banner', false>;
+    home_equipment: Schema.Attribute.Component<'home.home-equipment', false>;
+    home_process: Schema.Attribute.Component<'home.home-process', false>;
     home_story: Schema.Attribute.Component<'home.home-story', false>;
     home_welcome: Schema.Attribute.Component<'home.home-welcome', false>;
+    home_why_choose: Schema.Attribute.Component<'home.home-why-choose', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;

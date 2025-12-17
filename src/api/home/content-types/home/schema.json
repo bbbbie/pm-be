@@ -25,6 +25,21 @@
       "type": "component",
       "component": "home.home-story",
       "repeatable": false
+    },
+    "home_why_choose": {
+      "type": "component",
+      "component": "home.home-why-choose",
+      "repeatable": false
+    },
+    "home_equipment": {
+      "type": "component",
+      "component": "home.home-equipment",
+      "repeatable": false
+    },
+    "home_process": {
+      "type": "component",
+      "component": "home.home-process",
+      "repeatable": false
     }
   }
 }

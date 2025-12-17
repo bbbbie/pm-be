@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_home_why_chooses",
+  "info": {
+    "displayName": "Home Why Choose"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "commitment_title": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "component": "home.why-choose-feature",
+      "repeatable": true
+    },
+    "stats": {
+      "type": "component",
+      "component": "home.why-choose-stat",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

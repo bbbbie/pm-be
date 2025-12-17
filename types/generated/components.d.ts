@@ -23,13 +23,44 @@ export interface HomeHomeBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeHomeEquipment extends Struct.ComponentSchema {
+  collectionName: 'components_home_home_equipments';
+  info: {
+    displayName: 'Home Equipment';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    machines: Schema.Attribute.Component<'home.machine', true>;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeHomeProcess extends Struct.ComponentSchema {
+  collectionName: 'components_home_home_processes';
+  info: {
+    displayName: 'Home Process';
+  };
+  attributes: {
+    steps: Schema.Attribute.Component<'home.steps', true>;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface HomeHomeStory extends Struct.ComponentSchema {
   collectionName: 'components_home_home_stories';
   info: {
     displayName: 'Home Story';
   };
   attributes: {
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
@@ -43,6 +74,66 @@ export interface HomeHomeWelcome extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeHomeWhyChoose extends Struct.ComponentSchema {
+  collectionName: 'components_home_home_why_chooses';
+  info: {
+    displayName: 'Home Why Choose';
+  };
+  attributes: {
+    commitment_title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'home.why-choose-feature', true>;
+    stats: Schema.Attribute.Component<'home.why-choose-stat', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeMachine extends Struct.ComponentSchema {
+  collectionName: 'components_home_machines';
+  info: {
+    displayName: 'Machine';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface HomeSteps extends Struct.ComponentSchema {
+  collectionName: 'components_home_steps';
+  info: {
+    displayName: 'Steps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeWhyChooseFeature extends Struct.ComponentSchema {
+  collectionName: 'components_home_why_choose_features';
+  info: {
+    displayName: 'WhyChooseFeature';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeWhyChooseStat extends Struct.ComponentSchema {
+  collectionName: 'components_home_why_choose_stats';
+  info: {
+    displayName: 'WhyChooseStat';
+  };
+  attributes: {
+    color: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    number: Schema.Attribute.String;
   };
 }
 
@@ -110,8 +201,15 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'home.home-banner': HomeHomeBanner;
+      'home.home-equipment': HomeHomeEquipment;
+      'home.home-process': HomeHomeProcess;
       'home.home-story': HomeHomeStory;
       'home.home-welcome': HomeHomeWelcome;
+      'home.home-why-choose': HomeHomeWhyChoose;
+      'home.machine': HomeMachine;
+      'home.steps': HomeSteps;
+      'home.why-choose-feature': HomeWhyChooseFeature;
+      'home.why-choose-stat': HomeWhyChooseStat;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
