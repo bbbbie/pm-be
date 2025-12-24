@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_customer_lists",
+  "info": {
+    "displayName": "customer_list"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

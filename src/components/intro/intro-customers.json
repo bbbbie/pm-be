@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_intro_intro_customers",
+  "info": {
+    "displayName": "intro_customers"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "customer_list": {
+      "type": "component",
+      "component": "shared.customer-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

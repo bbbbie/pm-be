@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_intro_intro_aboutus_s",
+  "info": {
+    "displayName": "Intro Aboutus "
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "core_values_title": {
+      "type": "string"
+    },
+    "core_values": {
+      "type": "component",
+      "component": "intro.intro-corevalue",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

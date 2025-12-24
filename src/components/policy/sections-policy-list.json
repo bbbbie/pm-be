@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_policy_sections_policy_lists",
+  "info": {
+    "displayName": "sections.policy-list"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Items": {
+      "type": "component",
+      "component": "policy.items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

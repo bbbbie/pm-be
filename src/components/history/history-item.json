@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_history_history_items",
+  "info": {
+    "displayName": "HistoryItem"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

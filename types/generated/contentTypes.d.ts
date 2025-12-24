@@ -585,8 +585,44 @@ export interface ApiCompanyInfoCompanyInfo extends Struct.SingleTypeSchema {
       'api::company-info.company-info'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    map_url: Schema.Attribute.Text;
     phone_1: Schema.Attribute.String;
     phone_2: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    qr_code: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    social_facebook: Schema.Attribute.String;
+    social_instagram: Schema.Attribute.String;
+    social_twitter: Schema.Attribute.String;
+    social_zalo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    working_hours: Schema.Attribute.String;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'Footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    columns: Schema.Attribute.Component<'foot.footer-column', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -731,6 +767,103 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIntroductionIntroduction extends Struct.SingleTypeSchema {
+  collectionName: 'introductions';
+  info: {
+    displayName: 'Introduction';
+    pluralName: 'introductions';
+    singularName: 'introduction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro_aboutus: Schema.Attribute.Component<'intro.intro-aboutus', false>;
+    intro_awards: Schema.Attribute.Component<'intro.intro-awards', false>;
+    intro_customers: Schema.Attribute.Component<'intro.intro-customers', false>;
+    intro_hero: Schema.Attribute.Component<'intro.intro-hero', false>;
+    intro_history: Schema.Attribute.Component<'intro.intro-history', false>;
+    intro_machinery: Schema.Attribute.Component<'intro.intro-machine', false>;
+    intro_news: Schema.Attribute.Component<'home.home-news', false>;
+    intro_team: Schema.Attribute.Component<'intro.intro-team', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::introduction.introduction'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
+  collectionName: 'navigations';
+  info: {
+    displayName: 'Navigation';
+    pluralName: 'navigations';
+    singularName: 'navigation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.Component<'nav.layout-menu-link', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPolicyPolicy extends Struct.CollectionTypeSchema {
+  collectionName: 'policies';
+  info: {
+    displayName: 'Policy';
+    pluralName: 'policies';
+    singularName: 'policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      ['policy.sections-simple-text', 'policy.sections-policy-list']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    features: Schema.Attribute.Component<'shared.features', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::policy.policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    sub_header: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -824,6 +957,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    group: Schema.Attribute.Enumeration<['core', 'other']>;
     hero_section: Schema.Attribute.Component<'service.hero-service', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1366,10 +1500,17 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::company-info.company-info': ApiCompanyInfoCompanyInfo;
+<<<<<<< HEAD
       'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::contactpage.contactpage': ApiContactpageContactpage;
+=======
+      'api::footer.footer': ApiFooterFooter;
+>>>>>>> c45e0007896b250ec1bbbf075aaa9527f1dfcea0
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::introduction.introduction': ApiIntroductionIntroduction;
+      'api::navigation.navigation': ApiNavigationNavigation;
+      'api::policy.policy': ApiPolicyPolicy;
       'api::product.product': ApiProductProduct;
       'api::project.project': ApiProjectProject;
       'api::service.service': ApiServiceService;

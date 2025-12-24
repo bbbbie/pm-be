@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "policies",
+  "info": {
+    "singularName": "policy",
+    "pluralName": "policies",
+    "displayName": "Policy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_header": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "features": {
+      "type": "component",
+      "component": "shared.features",
+      "repeatable": true
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "policy.sections-simple-text",
+        "policy.sections-policy-list"
+      ]
+    }
+  }
+}

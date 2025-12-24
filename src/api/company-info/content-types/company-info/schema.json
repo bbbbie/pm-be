@@ -22,6 +22,44 @@
     },
     "phone_2": {
       "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "qr_code": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "working_hours": {
+      "type": "string"
+    },
+    "map_url": {
+      "type": "text"
+    },
+    "social_facebook": {
+      "type": "string"
+    },
+    "social_zalo": {
+      "type": "string"
+    },
+    "social_twitter": {
+      "type": "string"
+    },
+    "social_instagram": {
+      "type": "string"
     }
   }
 }

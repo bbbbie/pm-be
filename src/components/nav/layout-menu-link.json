@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_nav_layout_menu_links",
+  "info": {
+    "displayName": "layout.menu_link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "link",
+        "service_dropdown",
+        "policy_dropdown"
+      ]
+    }
+  },
+  "config": {}
+}

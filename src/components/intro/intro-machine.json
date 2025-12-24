@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_intro_intro_machine_s",
+  "info": {
+    "displayName": "Intro Machine "
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "machine_list": {
+      "type": "component",
+      "component": "shared.machine-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

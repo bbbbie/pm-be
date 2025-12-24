@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_intro_intro_teams",
+  "info": {
+    "displayName": "Intro Team"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "members": {
+      "type": "component",
+      "component": "intro.team-member",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_policy_sections_simple_texts",
+  "info": {
+    "displayName": "sections.simple-text"
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    }
+  },
+  "config": {}
+}

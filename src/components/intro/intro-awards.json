@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_intro_intro_awards",
+  "info": {
+    "displayName": "intro_awards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "award_list": {
+      "type": "component",
+      "component": "shared.award-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_machine_lists",
+  "info": {
+    "displayName": "machine_list"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

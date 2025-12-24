@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_intro_intro_histories",
+  "info": {
+    "displayName": "Intro History"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "component": "history.history-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

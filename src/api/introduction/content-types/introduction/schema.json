@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "introductions",
+  "info": {
+    "singularName": "introduction",
+    "pluralName": "introductions",
+    "displayName": "Introduction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "intro_hero": {
+      "type": "component",
+      "component": "intro.intro-hero",
+      "repeatable": false
+    },
+    "intro_aboutus": {
+      "type": "component",
+      "component": "intro.intro-aboutus",
+      "repeatable": false
+    },
+    "intro_history": {
+      "type": "component",
+      "component": "intro.intro-history",
+      "repeatable": false
+    },
+    "intro_team": {
+      "type": "component",
+      "component": "intro.intro-team",
+      "repeatable": false
+    },
+    "intro_machinery": {
+      "type": "component",
+      "component": "intro.intro-machine",
+      "repeatable": false
+    },
+    "intro_customers": {
+      "type": "component",
+      "component": "intro.intro-customers",
+      "repeatable": false
+    },
+    "intro_awards": {
+      "type": "component",
+      "component": "intro.intro-awards",
+      "repeatable": false
+    },
+    "intro_news": {
+      "type": "component",
+      "component": "home.home-news",
+      "repeatable": false
+    }
+  }
+}
