@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_contact_socials",
+  "info": {
+    "displayName": "Social"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

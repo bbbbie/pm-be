@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_contact_forms",
+  "info": {
+    "displayName": "Contact Form"
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "type": "component",
+      "component": "contact.service",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

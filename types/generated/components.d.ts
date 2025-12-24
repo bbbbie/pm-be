@@ -1,5 +1,15 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+<<<<<<< HEAD
+export interface ContactContactBanner extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_banners';
+  info: {
+    displayName: 'Contact Banner';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle: Schema.Attribute.String;
+=======
 export interface FootFooterColumn extends Struct.ComponentSchema {
   collectionName: 'components_foot_footer_columns';
   info: {
@@ -7,10 +17,52 @@ export interface FootFooterColumn extends Struct.ComponentSchema {
   };
   attributes: {
     links: Schema.Attribute.Component<'foot.footer-link', true>;
+>>>>>>> c45e0007896b250ec1bbbf075aaa9527f1dfcea0
     title: Schema.Attribute.String;
   };
 }
 
+<<<<<<< HEAD
+export interface ContactContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_forms';
+  info: {
+    displayName: 'Contact Form';
+  };
+  attributes: {
+    service: Schema.Attribute.Component<'contact.service', true>;
+  };
+}
+
+export interface ContactContactInfo extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_infos';
+  info: {
+    displayName: 'ContactInfo';
+  };
+  attributes: {
+    social: Schema.Attribute.Component<'contact.social', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactService extends Struct.ComponentSchema {
+  collectionName: 'components_contact_services';
+  info: {
+    displayName: 'Service';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactSocial extends Struct.ComponentSchema {
+  collectionName: 'components_contact_socials';
+  info: {
+    displayName: 'Social';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+=======
 export interface FootFooterLink extends Struct.ComponentSchema {
   collectionName: 'components_foot_footer_links';
   info: {
@@ -38,6 +90,7 @@ export interface HistoryHistoryItem extends Struct.ComponentSchema {
       >;
     title: Schema.Attribute.String;
     year: Schema.Attribute.String;
+>>>>>>> c45e0007896b250ec1bbbf075aaa9527f1dfcea0
   };
 }
 
@@ -636,9 +689,17 @@ export interface SharedTestimonialItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+<<<<<<< HEAD
+      'contact.contact-banner': ContactContactBanner;
+      'contact.contact-form': ContactContactForm;
+      'contact.contact-info': ContactContactInfo;
+      'contact.service': ContactService;
+      'contact.social': ContactSocial;
+=======
       'foot.footer-column': FootFooterColumn;
       'foot.footer-link': FootFooterLink;
       'history.history-item': HistoryHistoryItem;
+>>>>>>> c45e0007896b250ec1bbbf075aaa9527f1dfcea0
       'home.home-banner': HomeHomeBanner;
       'home.home-equipment': HomeHomeEquipment;
       'home.home-experience': HomeHomeExperience;

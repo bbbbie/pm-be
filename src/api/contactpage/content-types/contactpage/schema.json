@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "contactpages",
+  "info": {
+    "singularName": "contactpage",
+    "pluralName": "contactpages",
+    "displayName": "Contactpage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contact_banner": {
+      "type": "component",
+      "component": "contact.contact-banner",
+      "repeatable": false
+    },
+    "contact_form": {
+      "type": "component",
+      "component": "contact.contact-form",
+      "repeatable": false
+    },
+    "contact_info": {
+      "type": "component",
+      "component": "contact.contact-info",
+      "repeatable": false
+    }
+  }
+}

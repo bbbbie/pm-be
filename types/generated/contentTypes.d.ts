@@ -630,6 +630,69 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactMessageContactMessage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_messages';
+  info: {
+    displayName: 'ContactMessage';
+    pluralName: 'contact-messages';
+    singularName: 'contact-message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    fullName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-message.contact-message'
+    > &
+      Schema.Attribute.Private;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    service: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactpageContactpage extends Struct.SingleTypeSchema {
+  collectionName: 'contactpages';
+  info: {
+    displayName: 'Contactpage';
+    pluralName: 'contactpages';
+    singularName: 'contactpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact_banner: Schema.Attribute.Component<'contact.contact-banner', false>;
+    contact_form: Schema.Attribute.Component<'contact.contact-form', false>;
+    contact_info: Schema.Attribute.Component<'contact.contact-info', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contactpage.contactpage'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1437,7 +1500,12 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::company-info.company-info': ApiCompanyInfoCompanyInfo;
+<<<<<<< HEAD
+      'api::contact-message.contact-message': ApiContactMessageContactMessage;
+      'api::contactpage.contactpage': ApiContactpageContactpage;
+=======
       'api::footer.footer': ApiFooterFooter;
+>>>>>>> c45e0007896b250ec1bbbf075aaa9527f1dfcea0
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::introduction.introduction': ApiIntroductionIntroduction;
